@@ -20,7 +20,7 @@ import joblib
 
 # ── Ensure src/ is on the path so preprocessing constants are accessible ──
 _SRC_DIR = os.path.dirname(os.path.abspath(__file__))
-_PROJECT_ROOT = os.path.dirname(_SRC_DIR)
+_PROJECT_ROOT = os.path.abspath(os.path.join(_SRC_DIR, ".."))
 if _SRC_DIR not in sys.path:
     sys.path.insert(0, _SRC_DIR)
 
