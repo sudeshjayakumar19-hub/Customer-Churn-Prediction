@@ -23,7 +23,7 @@ import numpy as np
 _PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(_PROJECT_ROOT, "src"))
 
-from predict import load_model_bundle, predict_churn, RISK_LOW_THRESHOLD, RISK_HIGH_THRESHOLD
+from src.predict import load_model_bundle, predict_churn, RISK_LOW_THRESHOLD, RISK_HIGH_THRESHOLD
 
 # ═══════════════════════════════════════════════════════════════════════════
 # Page config
@@ -50,7 +50,7 @@ def get_model():
                 [sys.executable, os.path.join(_PROJECT_ROOT, "setup_model.py")],
                 check=True
             )
-    return load_model_bundle()
+    return load_model_bundle(model_path)
 
 try:
     bundle = get_model()
